@@ -42,9 +42,6 @@ ALLOWED_HOSTS = [
     if host.strip()
 ]
 
-print("RENDER DEBUG:", DEBUG)
-print("RENDER ALLOWED_HOSTS:", ALLOWED_HOSTS)
-
 
 INSTALLED_APPS = [
     "django.contrib.admin",
