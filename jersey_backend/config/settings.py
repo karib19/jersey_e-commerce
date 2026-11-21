@@ -18,15 +18,11 @@ DEBUG = os.getenv("DEBUG", "True").lower() in (
     "true", "1", "yes"
 )
 
-print("RENDER DEBUG:", DEBUG)
-print("RENDER ALLOWED_HOSTS:", ALLOWED_HOSTS)
-
 # Production HTTPS Security
 SECURE_PROXY_SSL_HEADER = (
     "HTTP_X_FORWARDED_PROTO",
     "https"
 )
-
 
 if not DEBUG:
     SECURE_SSL_REDIRECT = True
@@ -46,7 +42,8 @@ ALLOWED_HOSTS = [
     if host.strip()
 ]
 
-
+print("RENDER DEBUG:", DEBUG)
+print("RENDER ALLOWED_HOSTS:", ALLOWED_HOSTS)
 
 
 INSTALLED_APPS = [
