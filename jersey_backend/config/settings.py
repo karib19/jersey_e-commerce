@@ -18,6 +18,16 @@ DEBUG = os.getenv("DEBUG", "True").lower() in (
     "true", "1", "yes"
 )
 
+print("RENDER DEBUG:", DEBUG)
+print("RENDER ALLOWED_HOSTS:", ALLOWED_HOSTS)
+
+# Production HTTPS Security
+SECURE_PROXY_SSL_HEADER = (
+    "HTTP_X_FORWARDED_PROTO",
+    "https"
+)
+
+
 if not DEBUG:
     SECURE_SSL_REDIRECT = True
     SECURE_HSTS_SECONDS = 3600
@@ -234,10 +244,3 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 
 AUTH_USER_MODEL = "accounts.User"
-
-
-# Production HTTPS Security
-SECURE_PROXY_SSL_HEADER = (
-    "HTTP_X_FORWARDED_PROTO",
-    "https"
-)
